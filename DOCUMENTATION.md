@@ -19,6 +19,7 @@
 - [Testing in VS Code](#testing-locally-in-vs-code)
 - [Testing in Langflow](#testing-in-langflow)
 - [Troubleshooting](#troubleshooting)
+- [Publishing](PUBLISHING.md) – npm and MCP Registry procedure
 
 ---
 

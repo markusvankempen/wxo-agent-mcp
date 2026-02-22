@@ -1,5 +1,9 @@
 # WxO Agent MCP
 
+[![npm version](https://img.shields.io/npm/v/wxo-agent-mcp.svg)](https://www.npmjs.com/package/wxo-agent-mcp)
+[![npm downloads](https://img.shields.io/npm/dm/wxo-agent-mcp.svg)](https://www.npmjs.com/package/wxo-agent-mcp)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 <p align="center">
   <img src="resources/icon.svg" alt="wxo-agent-mcp" width="128" />
 </p>
@@ -8,7 +12,8 @@ Simple MCP (Model Context Protocol) server that **invokes a single Watson Orches
 
 Use this when you want a lightweight MCP that only chats with one agent—no tool management, no agent listing, no flows. Just `invoke_agent(message)` and `get_agent()`.
 
-**Full documentation:** [DOCUMENTATION.md](DOCUMENTATION.md) (includes [screenshots](DOCUMENTATION.md#testing-in-langflow) for VS Code and Langflow).
+**Full documentation:** [DOCUMENTATION.md](DOCUMENTATION.md) (includes [screenshots](DOCUMENTATION.md#testing-in-langflow) for VS Code and Langflow).  
+**Publishing:** [PUBLISHING.md](PUBLISHING.md) – npm and MCP Registry procedure.
 
 ### Architecture
 
@@ -95,6 +100,17 @@ See [DOCUMENTATION.md](DOCUMENTATION.md#testing-locally-in-vs-code) for more pro
 
 ## MCP Client Configuration
 
+### One-click install (Cursor Directory)
+
+**[Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJ3eG8tYWdlbnQiOnsiY29tbWFuZCI6Im5weCIsImFyZ3MiOlsiLXkiLCJ3eG8tYWdlbnQtbWNwIl0sImVudiI6eyJXT19BUElfS0VZIjoieW91ci1hcGkta2V5IiwiV09fSU5TVEFOQ0VfVVJMIjoiaHR0cHM6Ly95b3VyLWluc3RhbmNlLm9yY2hlc3RyYXRlLmlibS5jb20iLCJXT19BR0VOVF9JRCI6InlvdXItYWdlbnQtaWQifX19)** — Click to add. Then set `WO_API_KEY`, `WO_INSTANCE_URL`, and `WO_AGENT_ID` in Cursor MCP settings.
+
+**For [cursor.directory/mcp/new](https://cursor.directory/mcp/new) submission:**
+
+| Field | Value |
+|-------|-------|
+| **Cursor Deep Link** | `cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJ3eG8tYWdlbnQiOnsiY29tbWFuZCI6Im5weCIsImFyZ3MiOlsiLXkiLCJ3eG8tYWdlbnQtbWNwIl0sImVudiI6eyJXT19BUElfS0VZIjoieW91ci1hcGkta2V5IiwiV09fSU5TVEFOQ0VfVVJMIjoiaHR0cHM6Ly95b3VyLWluc3RhbmNlLm9yY2hlc3RyYXRlLmlibS5jb20iLCJXT19BR0VOVF9JRCI6InlvdXItYWdlbnQtaWQifX19` |
+| **Install instructions** | https://github.com/markusvankempen/wxo-agent-mcp#mcp-client-configuration |
+
 ### Cursor (`.cursor/mcp.json`)
 
 ```json
@@ -160,6 +176,12 @@ Same config as Cursor. Copy `examples/antigravity-mcp.json` or add to your MCP c
 | Agent    | Single `WO_AGENT_ID`        | Multiple agents, `WO_AGENT_IDs`                      |
 | Tools    | `invoke_agent`, `get_agent` | 30+ tools (list_skills, deploy_tool, etc.)           |
 | Use case | Chat with a specific agent  | Build and manage Watson Orchestrate resources        |
+
+## Links
+
+- **npm:** [wxo-agent-mcp](https://www.npmjs.com/package/wxo-agent-mcp)
+- **MCP Registry:** [io.github.markusvankempen/wxo-agent-mcp](https://registry.modelcontextprotocol.io)
+- **GitHub:** [markusvankempen/wxo-agent-mcp](https://github.com/markusvankempen/wxo-agent-mcp)
 
 ## License
 

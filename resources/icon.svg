@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Rounded blue background (IBM blue) -->
+  <rect width="128" height="128" rx="24" ry="24" fill="#0f62fe"/>
+  <!-- L-shaped connector: chat bubble bottom -> down -> right -> cloud -->
+  <path d="M 52 48 L 52 72 L 72 72 L 72 78" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Chat bubble with three dots -->
+  <ellipse cx="40" cy="32" rx="22" ry="18" fill="white"/>
+  <path d="M 30 50 L 40 58 L 50 50 Z" fill="white"/>
+  <circle cx="32" cy="32" r="3" fill="#0f62fe"/>
+  <circle cx="40" cy="32" r="3" fill="#0f62fe"/>
+  <circle cx="48" cy="32" r="3" fill="#0f62fe"/>
+  <!-- Cloud shape -->
+  <path d="M 55 75 Q 45 75 45 85 Q 45 92 52 92 L 88 92 Q 95 92 95 85 Q 95 75 85 75 Q 85 65 72 65 Q 62 65 55 75 Z" fill="white"/>
+  <!-- Server rack inside cloud -->
+  <rect x="62" y="78" width="20" height="5" rx="1" fill="#0f62fe"/>
+  <rect x="62" y="84" width="20" height="5" rx="1" fill="#0f62fe"/>
+  <circle cx="66" cy="80.5" r="1.5" fill="white"/>
+  <circle cx="71" cy="80.5" r="1.5" fill="white"/>
+  <circle cx="76" cy="80.5" r="1.5" fill="white"/>
+  <circle cx="66" cy="86.5" r="1.5" fill="white"/>
+  <circle cx="71" cy="86.5" r="1.5" fill="white"/>
+  <circle cx="76" cy="86.5" r="1.5" fill="white"/>
+  <line x1="65" y1="90" x2="79" y2="90" stroke="#0f62fe" stroke-width="1"/>
+</svg>

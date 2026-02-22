@@ -8,6 +8,10 @@
   <img src="resources/icon.svg" alt="wxo-agent-mcp" width="128" />
 </p>
 
+<p align="center">
+  <a href="cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInd4by1hZ2VudC1tY3AiXSwiZW52Ijp7IldPX0FQSV9LRVkiOiJ5b3VyLWFwaS1rZXkiLCJXT19JTlNUQU5DRV9VUkwiOiJodHRwczovL3lvdXItaW5zdGFuY2Uub3JjaGVzdHJhdGUuaWJtLmNvbSIsIldPX0FHRU5UX0lEIjoieW91ci1hZ2VudC1pZCJ9fQ=="><img src="https://img.shields.io/badge/Add_to_Cursor-WxO%20Agent%20MCP-0f62fe?style=for-the-badge" alt="Add MCP server to Cursor" /></a>
+</p>
+
 Simple MCP (Model Context Protocol) server that **invokes a single Watson Orchestrate agent** remotely. The agent is defined once via environment variables or MCP config.
 
 Use this when you want a lightweight MCP that only chats with one agent—no tool management, no agent listing, no flows. Just `invoke_agent(message)` and `get_agent()`.

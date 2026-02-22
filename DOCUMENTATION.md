@@ -129,13 +129,13 @@ sequenceDiagram
 
 ### Supported Clients
 
-| Client | Config | Transport |
-|--------|--------|-----------|
-| **Cursor** | `.cursor/mcp.json` | stdio |
-| **VS Code Copilot** | `.vscode/mcp.json` | stdio |
-| **Langflow** | MCP Tools component (STDIO) | stdio |
-| **Claude Desktop** | `claude_desktop_config.json` | stdio |
-| **Antigravity** | MCP servers config | stdio |
+| Client              | Config                       | Transport |
+| ------------------- | ---------------------------- | --------- |
+| **Cursor**          | `.cursor/mcp.json`           | stdio     |
+| **VS Code Copilot** | `.vscode/mcp.json`           | stdio     |
+| **Langflow**        | MCP Tools component (STDIO)  | stdio     |
+| **Claude Desktop**  | `claude_desktop_config.json` | stdio     |
+| **Antigravity**     | MCP servers config           | stdio     |
 
 All clients spawn the MCP server as a subprocess and communicate via **stdio** (stdin/stdout) using the MCP JSON-RPC protocol.
 
@@ -173,12 +173,12 @@ flowchart LR
 
 ### Compared to wxo-builder-mcp-server
 
-| Aspect | wxo-agent-mcp | wxo-builder-mcp-server |
-|--------|---------------|------------------------|
-| Purpose | Chat with one agent | Full dev toolkit |
-| Agent config | Single `WO_AGENT_ID` or `WO_AGENT_IDs` | Multiple agents, `WO_AGENT_IDs` |
-| Tools | 2 (`invoke_agent`, `get_agent`) | 30+ (list_skills, deploy_tool, etc.) |
-| Use case | “Ask my agent” | Build and manage Watson Orchestrate resources |
+| Aspect       | wxo-agent-mcp                          | wxo-builder-mcp-server                        |
+| ------------ | -------------------------------------- | --------------------------------------------- |
+| Purpose      | Chat with one agent                    | Full dev toolkit                              |
+| Agent config | Single `WO_AGENT_ID` or `WO_AGENT_IDs` | Multiple agents, `WO_AGENT_IDs`               |
+| Tools        | 2 (`invoke_agent`, `get_agent`)        | 30+ (list_skills, deploy_tool, etc.)          |
+| Use case     | “Ask my agent”                         | Build and manage Watson Orchestrate resources |
 
 ---
 
@@ -204,11 +204,11 @@ wxo-agent-mcp/
 
 ### Source Files
 
-| File | Role |
-|------|------|
-| **src/index.ts** | MCP server setup, `invoke_agent` and `get_agent` tools. Uses Watson Orchestrate Runs API (`POST /v1/orchestrate/runs`), polls for messages via `GET /v1/orchestrate/threads/{id}/messages`. |
-| **src/config.ts** | Loads `.env`, normalizes `WO_INSTANCE_URL` (fixes `ttps://` typo, adds `https://` when missing), resolves `WO_AGENT_ID` or `WO_AGENT_IDs` (first ID). |
-| **src/auth.ts** | IAM token acquisition (IBM Cloud API key → Bearer token), `woFetch` for authenticated requests to Watson Orchestrate. |
+| File              | Role                                                                                                                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **src/index.ts**  | MCP server setup, `invoke_agent` and `get_agent` tools. Uses Watson Orchestrate Runs API (`POST /v1/orchestrate/runs`), polls for messages via `GET /v1/orchestrate/threads/{id}/messages`. |
+| **src/config.ts** | Loads `.env`, normalizes `WO_INSTANCE_URL` (fixes `ttps://` typo, adds `https://` when missing), resolves `WO_AGENT_ID` or `WO_AGENT_IDs` (first ID).                                       |
+| **src/auth.ts**   | IAM token acquisition (IBM Cloud API key → Bearer token), `woFetch` for authenticated requests to Watson Orchestrate.                                                                       |
 
 ---
 
@@ -216,13 +216,13 @@ wxo-agent-mcp/
 
 ### Environment Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| **WO_API_KEY** | Yes | IBM Cloud API key for Watson Orchestrate. |
-| **WO_INSTANCE_URL** | Yes | Watson Orchestrate instance URL (e.g. `https://api.us-south.watson-orchestrate.cloud.ibm.com/instances/{id}` or `https://{id}.orchestrate.ibm.com`). |
-| **WO_AGENT_ID** | One of WO_AGENT_ID / WO_AGENT_IDs | Agent ID to invoke. |
-| **WO_AGENT_IDs** | One of WO_AGENT_ID / WO_AGENT_IDs | Comma-separated agent IDs; first is used. |
-| **IAM_TOKEN_URL** | No | Default `https://iam.cloud.ibm.com/identity/token`. Override for private IAM. |
+| Variable            | Required                          | Description                                                                                                                                          |
+| ------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **WO_API_KEY**      | Yes                               | IBM Cloud API key for Watson Orchestrate.                                                                                                            |
+| **WO_INSTANCE_URL** | Yes                               | Watson Orchestrate instance URL (e.g. `https://api.us-south.watson-orchestrate.cloud.ibm.com/instances/{id}` or `https://{id}.orchestrate.ibm.com`). |
+| **WO_AGENT_ID**     | One of WO_AGENT_ID / WO_AGENT_IDs | Agent ID to invoke.                                                                                                                                  |
+| **WO_AGENT_IDs**    | One of WO_AGENT_ID / WO_AGENT_IDs | Comma-separated agent IDs; first is used.                                                                                                            |
+| **IAM_TOKEN_URL**   | No                                | Default `https://iam.cloud.ibm.com/identity/token`. Override for private IAM.                                                                        |
 
 ### URL Normalization
 
@@ -253,9 +253,9 @@ Sends a user message to the configured agent and returns the assistant reply.
 
 ```json
 {
-  "success": true,
-  "response": "The agent's reply text.",
-  "thread_id": "uuid"
+    "success": true,
+    "response": "The agent's reply text.",
+    "thread_id": "uuid"
 }
 ```
 
@@ -282,32 +282,32 @@ Example questions to ask in **Cursor**, **VS Code Copilot**, **Langflow**, or ot
 
 ### invoke_agent (chat with the agent)
 
-| Question | What the agent might do |
-|----------|-------------------------|
-| What is the weather in Amsterdam? | Use weather tool |
-| What time is it in Tokyo? | Use World Time tool |
-| Tell me a dad joke | Use Dad Jokes tool |
-| What can you help me with? | Describe capabilities |
-| Get the METAR for KJFK | Use aviation weather tool |
-| Tell me about Brazil | Use REST Countries tool |
-| What's the exchange rate for CAD to USD? | Use currency tool |
-| Hello, who are you? | Introduce itself |
+| Question                                 | What the agent might do   |
+| ---------------------------------------- | ------------------------- |
+| What is the weather in Amsterdam?        | Use weather tool          |
+| What time is it in Tokyo?                | Use World Time tool       |
+| Tell me a dad joke                       | Use Dad Jokes tool        |
+| What can you help me with?               | Describe capabilities     |
+| Get the METAR for KJFK                   | Use aviation weather tool |
+| Tell me about Brazil                     | Use REST Countries tool   |
+| What's the exchange rate for CAD to USD? | Use currency tool         |
+| Hello, who are you?                      | Introduce itself          |
 
 ### get_agent (agent details)
 
-| Question | Response |
-|----------|----------|
+| Question                                   | Response                                     |
+| ------------------------------------------ | -------------------------------------------- |
 | Use get_agent to show me the agent details | Agent name, description, tools, instructions |
-| What tools does my agent have? | List of assigned tools |
-| Show me the agent configuration | Full agent JSON |
+| What tools does my agent have?             | List of assigned tools                       |
+| Show me the agent configuration            | Full agent JSON                              |
 
 ### Natural-language style (AI selects the tool)
 
-| Question |
-|----------|
+| Question                                            |
+| --------------------------------------------------- |
 | Ask my Watson agent: What is the weather in London? |
-| Chat with the agent: Tell me a dad joke |
-| Use the agent to get the current time in New York |
+| Chat with the agent: Tell me a dad joke             |
+| Use the agent to get the current time in New York   |
 
 ### test:verify (terminal)
 
@@ -383,17 +383,17 @@ The server runs on stdio. MCP clients spawn it as a subprocess and communicate v
 
 ```json
 {
-  "mcpServers": {
-    "wxo-agent": {
-      "command": "node",
-      "args": ["/absolute/path/to/wxo-agent-mcp/dist/index.js"],
-      "env": {
-        "WO_API_KEY": "your-key",
-        "WO_INSTANCE_URL": "https://xxx.orchestrate.ibm.com",
-        "WO_AGENT_ID": "your-agent-id"
-      }
+    "mcpServers": {
+        "wxo-agent": {
+            "command": "node",
+            "args": ["/absolute/path/to/wxo-agent-mcp/dist/index.js"],
+            "env": {
+                "WO_API_KEY": "your-key",
+                "WO_INSTANCE_URL": "https://xxx.orchestrate.ibm.com",
+                "WO_AGENT_ID": "your-agent-id"
+            }
+        }
     }
-  }
 }
 ```
 
@@ -401,13 +401,13 @@ The server runs on stdio. MCP clients spawn it as a subprocess and communicate v
 
 ```json
 {
-  "mcpServers": {
-    "wxo-agent": {
-      "command": "npx",
-      "args": ["-y", "wxo-agent-mcp"],
-      "env": { "WO_API_KEY": "...", "WO_INSTANCE_URL": "...", "WO_AGENT_ID": "..." }
+    "mcpServers": {
+        "wxo-agent": {
+            "command": "npx",
+            "args": ["-y", "wxo-agent-mcp"],
+            "env": { "WO_API_KEY": "...", "WO_INSTANCE_URL": "...", "WO_AGENT_ID": "..." }
+        }
     }
-  }
 }
 ```
 
@@ -426,14 +426,14 @@ This section assumes the MCP server is named **`wxo-agent`** in `mcp.json` (work
 
 ```json
 {
-  "servers": {
-    "wxo-agent": {
-      "type": "stdio",
-      "command": "node",
-      "args": ["${workspaceFolder}/dist/index.js"],
-      "envFile": "${workspaceFolder}/.env"
+    "servers": {
+        "wxo-agent": {
+            "type": "stdio",
+            "command": "node",
+            "args": ["${workspaceFolder}/dist/index.js"],
+            "envFile": "${workspaceFolder}/.env"
+        }
     }
-  }
 }
 ```
 
@@ -455,19 +455,22 @@ npm run test:verify -- -ask "What is the weather in Amsterdam?"
 
 **Example prompts that invoke the agent:**
 
-| Prompt | Effect |
-|--------|--------|
-| *Use the invoke_agent tool to ask: What is the weather in Amsterdam?* | Direct tool call |
-| *Call invoke_agent with message "What time is it in Tokyo?"* | Direct tool call |
-| *Ask my Watson agent: Tell me a dad joke* | Natural; Copilot selects the tool |
-| *Use get_agent to show me the agent details* | Returns agent config and tools |
-| *Chat with the agent: What can you help me with?* | Natural; Copilot selects the tool |
+| Prompt                                                                | Effect                            |
+| --------------------------------------------------------------------- | --------------------------------- |
+| _Use the invoke_agent tool to ask: What is the weather in Amsterdam?_ | Direct tool call                  |
+| _Call invoke_agent with message "What time is it in Tokyo?"_          | Direct tool call                  |
+| _Ask my Watson agent: Tell me a dad joke_                             | Natural; Copilot selects the tool |
+| _Use get_agent to show me the agent details_                          | Returns agent config and tools    |
+| _Chat with the agent: What can you help me with?_                     | Natural; Copilot selects the tool |
+
+![VS Code Copilot chat with wxo-agent](resources/images/vscode-chat-with-wxo-agent.png)
 
 **Tips if the tool is not invoked:**
 
-- Mention the tool explicitly: *Use invoke_agent to ask the agent: [your question]*
+- Mention the tool explicitly: _Use invoke_agent to ask the agent: [your question]_
 
-**Skip get_agent for capability questions:** Copilot may call `get_agent` first to fetch config. To get only the agent's answer, ask: *Use invoke_agent to ask: What can you do?* The tool descriptions nudge the AI to prefer `invoke_agent` for "what can you do" / "list capabilities".
+**Skip get_agent for capability questions:** Copilot may call `get_agent` first to fetch config. To get only the agent's answer, ask: _Use invoke_agent to ask: What can you do?_ The tool descriptions nudge the AI to prefer `invoke_agent` for "what can you do" / "list capabilities".
+
 - Restart VS Code and reopen the folder
 - Check that `dist/index.js` exists and `.env` is valid
 
@@ -494,12 +497,14 @@ Langflow can use the **wxo-agent** MCP server via the MCP Tools component (STDIO
 4. Click **Add MCP Server** and choose **STDIO**.
 5. Configure:
 
-| Field | Value |
-|-------|-------|
-| **Name** | `wxo-agent` |
-| **Command** | `node` |
-| **Arguments** | `["/absolute/path/to/wxo-agent-mcp/dist/index.js"]` |
+| Field                     | Value                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| **Name**                  | `wxo-agent`                                                                           |
+| **Command**               | `node`                                                                                |
+| **Arguments**             | `["/absolute/path/to/wxo-agent-mcp/dist/index.js"]`                                   |
 | **Environment Variables** | `WO_API_KEY`, `WO_INSTANCE_URL`, `WO_AGENT_ID` (or `WO_AGENT_IDs`) as key-value pairs |
+
+![Langflow MCP wxo-agent setup](resources/images/langflow-mcp-wxo-setup.png)
 
 **Alternative (npx, after publishing):**
 
@@ -511,11 +516,15 @@ Langflow can use the **wxo-agent** MCP server via the MCP Tools component (STDIO
 7. Connect the MCP Tools component’s **Toolset** port to an **Agent** component’s **Tools** port.
 8. Add **Chat Input** and **Chat Output** if needed.
 
+![Langflow agent setup with MCP Tools](resources/images/langflow-agent-setup.png)
+
 ### Example prompts in Playground
 
-- *Use invoke_agent to ask: What is the weather in Amsterdam?*
-- *Ask my Watson agent: Tell me a dad joke*
-- *Use get_agent to show the agent’s tools*
+- _Use invoke_agent to ask: What is the weather in Amsterdam?_
+- _Ask my Watson agent: Tell me a dad joke_
+- _Use get_agent to show the agent’s tools_
+
+![Langflow chat with wxo-agent](resources/images/langflow-chat-with-wxo-agent.png)
 
 ### Troubleshooting
 
@@ -528,23 +537,23 @@ Langflow can use the **wxo-agent** MCP server via the MCP Tools component (STDIO
 
 ## Troubleshooting
 
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| `URL scheme "ttps" is not supported` | Typo in `WO_INSTANCE_URL` | Use `https://` or rely on auto-correction. |
-| `Missing required environment variables` | Missing env vars | Set `WO_API_KEY`, `WO_INSTANCE_URL`, `WO_AGENT_ID` (or `WO_AGENT_IDs`). |
-| `Timed out waiting for agent response` | Slow agent / tool use | Increase poll count or delay in `index.ts`; check agent responsiveness. |
-| `IAM failed` | Invalid API key | Verify `WO_API_KEY` and regenerate if needed. |
-| `Get agent failed: 404` | Invalid agent ID | Check `WO_AGENT_ID` against your Watson Orchestrate instance. |
-| `Run failed: 500` (Langflow) | DataFrame / output format | Rebuild; tool output is now flattened. Check Node.js and env vars. |
+| Symptom                                  | Cause                     | Fix                                                                     |
+| ---------------------------------------- | ------------------------- | ----------------------------------------------------------------------- |
+| `URL scheme "ttps" is not supported`     | Typo in `WO_INSTANCE_URL` | Use `https://` or rely on auto-correction.                              |
+| `Missing required environment variables` | Missing env vars          | Set `WO_API_KEY`, `WO_INSTANCE_URL`, `WO_AGENT_ID` (or `WO_AGENT_IDs`). |
+| `Timed out waiting for agent response`   | Slow agent / tool use     | Increase poll count or delay in `index.ts`; check agent responsiveness. |
+| `IAM failed`                             | Invalid API key           | Verify `WO_API_KEY` and regenerate if needed.                           |
+| `Get agent failed: 404`                  | Invalid agent ID          | Check `WO_AGENT_ID` against your Watson Orchestrate instance.           |
+| `Run failed: 500` (Langflow)             | DataFrame / output format | Rebuild; tool output is now flattened. Check Node.js and env vars.      |
 
 ---
 
 ## API Dependencies
 
 - **Watson Orchestrate** (HTTP REST):
-  - `POST /v1/orchestrate/runs` – start a run
-  - `GET /v1/orchestrate/threads/{id}/messages` – get thread messages
-  - `GET /v1/orchestrate/agents/{id}` – get agent
+    - `POST /v1/orchestrate/runs` – start a run
+    - `GET /v1/orchestrate/threads/{id}/messages` – get thread messages
+    - `GET /v1/orchestrate/agents/{id}` – get agent
 - **IBM Cloud IAM** – exchange API key for Bearer token.
 
 ---

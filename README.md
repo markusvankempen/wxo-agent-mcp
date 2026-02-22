@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInd4by1hZ2VudC1tY3AiXSwiZW52Ijp7IldPX0FQSV9LRVkiOiJ5b3VyLWFwaS1rZXkiLCJXT19JTlNUQU5DRV9VUkwiOiJodHRwczovL3lvdXItaW5zdGFuY2Uub3JjaGVzdHJhdGUuaWJtLmNvbSIsIldPX0FHRU5UX0lEIjoieW91ci1hZ2VudC1pZCJ9fQ=="><img src="https://img.shields.io/badge/Add_to_Cursor-WxO%20Agent%20MCP-0f62fe?style=for-the-badge" alt="Add MCP server to Cursor" /></a>
+  <a href="https://cursor.directory/mcp/wxo-agent-mcp"><img src="https://img.shields.io/badge/Add_to_Cursor-WxO%20Agent%20MCP-0f62fe?style=for-the-badge" alt="Add MCP server to Cursor" /></a>
 </p>
 
 Simple MCP (Model Context Protocol) server that **invokes a single Watson Orchestrate agent** remotely. The agent is defined once via environment variables or MCP config.
@@ -106,7 +106,7 @@ See [DOCUMENTATION.md](DOCUMENTATION.md#testing-locally-in-vs-code) for more pro
 
 ### One-click install (Cursor Directory)
 
-**[Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInd4by1hZ2VudC1tY3AiXSwiZW52Ijp7IldPX0FQSV9LRVkiOiJ5b3VyLWFwaS1rZXkiLCJXT19JTlNUQU5DRV9VUkwiOiJodHRwczovL3lvdXItaW5zdGFuY2Uub3JjaGVzdHJhdGUuaWJtLmNvbSIsIldPX0FHRU5UX0lEIjoieW91ci1hZ2VudC1pZCJ9fQ==)** — Click to add. Then set `WO_API_KEY`, `WO_INSTANCE_URL`, and `WO_AGENT_ID` in Cursor MCP settings.
+**[Add to Cursor](https://cursor.directory/mcp/wxo-agent-mcp)** — Opens the Cursor Directory page. After adding, set `WO_API_KEY`, `WO_INSTANCE_URL`, and `WO_AGENT_ID` in Cursor MCP settings.
 
 **For [cursor.directory/mcp/new](https://cursor.directory/mcp/new) submission:**
 

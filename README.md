@@ -102,13 +102,13 @@ See [DOCUMENTATION.md](DOCUMENTATION.md#testing-locally-in-vs-code) for more pro
 
 ### One-click install (Cursor Directory)
 
-**[Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJ3eG8tYWdlbnQiOnsiY29tbWFuZCI6Im5weCIsImFyZ3MiOlsiLXkiLCJ3eG8tYWdlbnQtbWNwIl0sImVudiI6eyJXT19BUElfS0VZIjoieW91ci1hcGkta2V5IiwiV09fSU5TVEFOQ0VfVVJMIjoiaHR0cHM6Ly95b3VyLWluc3RhbmNlLm9yY2hlc3RyYXRlLmlibS5jb20iLCJXT19BR0VOVF9JRCI6InlvdXItYWdlbnQtaWQifX19)** — Click to add. Then set `WO_API_KEY`, `WO_INSTANCE_URL`, and `WO_AGENT_ID` in Cursor MCP settings.
+**[Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInd4by1hZ2VudC1tY3AiXSwiZW52Ijp7IldPX0FQSV9LRVkiOiJ5b3VyLWFwaS1rZXkiLCJXT19JTlNUQU5DRV9VUkwiOiJodHRwczovL3lvdXItaW5zdGFuY2Uub3JjaGVzdHJhdGUuaWJtLmNvbSIsIldPX0FHRU5UX0lEIjoieW91ci1hZ2VudC1pZCJ9fQ==)** — Click to add. Then set `WO_API_KEY`, `WO_INSTANCE_URL`, and `WO_AGENT_ID` in Cursor MCP settings.
 
 **For [cursor.directory/mcp/new](https://cursor.directory/mcp/new) submission:**
 
 | Field | Value |
 |-------|-------|
-| **Cursor Deep Link** | `cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJ3eG8tYWdlbnQiOnsiY29tbWFuZCI6Im5weCIsImFyZ3MiOlsiLXkiLCJ3eG8tYWdlbnQtbWNwIl0sImVudiI6eyJXT19BUElfS0VZIjoieW91ci1hcGkta2V5IiwiV09fSU5TVEFOQ0VfVVJMIjoiaHR0cHM6Ly95b3VyLWluc3RhbmNlLm9yY2hlc3RyYXRlLmlibS5jb20iLCJXT19BR0VOVF9JRCI6InlvdXItYWdlbnQtaWQifX19` |
+| **Cursor Deep Link** | `cursor://anysphere.cursor-deeplink/mcp/install?name=WxO%20Agent%20MCP&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInd4by1hZ2VudC1tY3AiXSwiZW52Ijp7IldPX0FQSV9LRVkiOiJ5b3VyLWFwaS1rZXkiLCJXT19JTlNUQU5DRV9VUkwiOiJodHRwczovL3lvdXItaW5zdGFuY2Uub3JjaGVzdHJhdGUuaWJtLmNvbSIsIldPX0FHRU5UX0lEIjoieW91ci1hZ2VudC1pZCJ9fQ==` |
 | **Install instructions** | https://github.com/markusvankempen/wxo-agent-mcp#mcp-client-configuration |
 
 ### Cursor (`.cursor/mcp.json`)
